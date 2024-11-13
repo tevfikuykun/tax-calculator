@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false
+  security:
+    basic:
+      enabled: false
+
+  logging:
+    level:
+      liquibase: INFO

@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+management:
+  server:
+    port: 8889
+
+spring:
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false
+  security:
+    basic:
+      enabled: false
