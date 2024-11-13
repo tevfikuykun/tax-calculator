@@ -8,7 +8,7 @@ public class Routing {
   @Bean
   public RouteLocator routeLocator(RouteLocatorBuilder routeLocatorBuilder){
     return routeLocatorBuilder.routes()
-        .route("products", r->r.path("/products/**")
+        .route("products", r->r.path("api/products/**")
             .filters(f->f.stripPrefix(1))
             .uri("lb://product-service"))
         .build();
