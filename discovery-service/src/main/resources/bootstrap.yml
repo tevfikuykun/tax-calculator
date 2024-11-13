@@ -1,0 +1,10 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: discovery-service
+  cloud:
+    config:
+      uri: http://${CONFIGURATION_HOST:localhost}:${CONFIGURATION_PORT:8888}
+      fail-fast: false
+      label: ""
