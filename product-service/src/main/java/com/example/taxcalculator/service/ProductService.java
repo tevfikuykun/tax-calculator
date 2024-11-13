@@ -20,7 +20,6 @@ public class ProductService {
     @Autowired
     private UserRepository userRepository;
 
-    // Create product and link it to the logged-in user (owner)
     public Product createProduct(Product product, Long userId) {
         // Find user by userId
         Optional<User> user = userRepository.findById(userId);
@@ -32,12 +31,11 @@ public class ProductService {
         }
     }
 
-    // Get all products
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
-    // Update product (only if the user is the owner)
+
     public Product updateProduct(Long productId, Product updatedProduct, Long userId) {
         Optional<Product> productOpt = productRepository.findById(productId);
         if (!productOpt.isPresent()) {
@@ -56,7 +54,6 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    // Delete product (only if the user is the owner)
     public void deleteProduct(Long productId, Long userId) {
         Optional<Product> productOpt = productRepository.findById(productId);
         if (!productOpt.isPresent()) {
@@ -71,7 +68,6 @@ public class ProductService {
         productRepository.deleteById(productId);
     }
 
-    // Calculate the tax for a given product
     public BigDecimal calculateTax(Product product) {
         if (product.getTaxRate() == null) {
             throw new RuntimeException("Tax rate not set for this product");
