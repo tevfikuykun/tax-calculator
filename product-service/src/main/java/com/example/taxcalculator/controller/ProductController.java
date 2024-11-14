@@ -4,6 +4,7 @@ import com.example.taxcalculator.model.Product;
 import com.example.taxcalculator.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.math.BigDecimal;
 import java.util.List;
